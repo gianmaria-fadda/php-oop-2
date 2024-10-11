@@ -100,6 +100,27 @@ $cucciaPerCani = new PetBed(
     $cani,
     'S');
 
+$ciboPergatti = new Food(
+    'Croccantini per gatti', 
+    10.59, 
+    'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.animalhouseitalia.it%2Fcibo-per-gatti-senior-o-sterilizzati%2F6449-trainer-natural-adult-sterilised-con-salmone-gr300-croccantini-gatto-8059149029825.html&psig=AOvVaw1cL7Ml5g3xhAoRq8g0N_Pi&ust=1728736909565000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKDgv5OthokDFQAAAAAdAAAAABAE',
+    $gatti,
+    'Croccantini');
+
+$giochiPergatti = new Toy(
+    'Giocattolo per gatti', 
+    15.79, 
+    'https://www.google.com/url?sa=i&url=https%3A%2F%2Fcroci.net%2Fproducts%2Fgioco-per-gatti-bacchetta-provence&psig=AOvVaw1npMtdU_Wu428y6QCTISsN&ust=1728736943802000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNjxi6WthokDFQAAAAAdAAAAABAE',
+    $gatti,
+    'Legno, Plastica, Gomma');
+
+$cucciaPergatti = new PetBed(
+    'Lettino per gatti', 
+    30.99, 
+    'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.sleepypets.it%2Fcucce-personalizzate-per-gatto%2F121-lettino-personalizzato-per-gatto-gliblack.html&psig=AOvVaw0R3YWotQNLfEdSPorux9e-&ust=1728736995995000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJiJyL-thokDFQAAAAAdAAAAABAE',
+    $gatti,
+    'M');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
