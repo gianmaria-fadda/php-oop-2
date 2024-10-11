@@ -79,6 +79,27 @@ $caniProdotto = new Product(
     'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.purinashop.it%2Fblog%2Fcuriosita-cani&psig=AOvVaw0gAtqbX0bOn9hlolYylmeO&ust=1728735853285000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJiio52phokDFQAAAAAdAAAAABAE',
     $cani);
 
+$ciboPerCani = new Food(
+    'Croccantini per Cani', 
+    10.59, 
+    'https://www.google.com/url?sa=i&url=https%3A%2F%2Fraggiodisole.biz%2Fretail%2Fproduct%2Fotto-mix%2F&psig=AOvVaw3kOUR67Af3gZ_pEzZzH3GR&ust=1728736660881000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNC-rZ6shokDFQAAAAAdAAAAABAE',
+    $cani,
+    'Croccantini');
+
+$giochiPerCani = new Toy(
+    'Osso di Gomma per Cani', 
+    15.79, 
+    'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pet-store.it%2Faqpetfriends-giochi-per-cani-strong-osso-in-gomma&psig=AOvVaw0xSxlsY3PGj81SYgNgmQdD&ust=1728736684216000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIDUxK6shokDFQAAAAAdAAAAABAE',
+    $cani,
+    'Gomma');
+
+$cucciaPerCani = new PetBed(
+    'Lettino per Cani', 
+    30.99, 
+    'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.xlab.design%2Farredamento%2Feco-design-e-riutilizzo%2Flettino-per-cani-milo-vintage%2F&psig=AOvVaw0aS8cW0GnDO_USItwkrXs-&ust=1728736717186000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOD927qshokDFQAAAAAdAAAAABAE',
+    $cani,
+    'S');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
