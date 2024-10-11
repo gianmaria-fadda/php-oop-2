@@ -15,7 +15,7 @@ class Product {
     public $title;
     public $price;
     public $img;
-    protected $category;
+    public $category;
 
     function __construct(string $title, float $price, string $img, Category|null $category) {
         $this->title = $title;
@@ -121,6 +121,17 @@ $cucciaPergatti = new PetBed(
     $gatti,
     'M');
 
+$product = [
+    $gattiProdotto,
+    $caniProdotto,
+    $ciboPerCani,
+    $giochiPerCani,
+    $cucciaPerCani,
+    $ciboPerGatti,
+    $giochiPerGatti,
+    $cucciaPerGatti
+];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -128,8 +139,39 @@ $cucciaPergatti = new PetBed(
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP OOP 2</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
+
+    <main>
+        <div class="container">
+            <div class="row g-3">
+                <?php
+                    foreach($products as $product) {
+                    
+                ?>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card">
+                            <img src="<?php echo $product->img; ?>" class="card-img-top" alt="<?php echo $product->title; ?>">
+                            <div class="card-body">
+                                <h2>
+                                    <?php echo $product->title; ?>
+                                </h2>
+                                <h5>
+                                    €<?php echo number format($product->price, 2, ',', '.');?>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                    }
+                ?>
+            </div>
+        </div>
+    </main>
     
 </body>
 </html>
