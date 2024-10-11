@@ -15,7 +15,7 @@ class Product {
     public $title;
     public $price;
     public $img;
-    public $category;
+    protected $category;
 
     function __construct(string $title, float $price, string $img, Category|null $category) {
         $this->title = $title;
@@ -158,11 +158,19 @@ $product = [
                             <img src="<?php echo $product->img; ?>" class="card-img-top" alt="<?php echo $product->title; ?>">
                             <div class="card-body">
                                 <h2>
-                                    <?php echo $product->title; ?>
+                                    <?php echo $product->title;?>
                                 </h2>
+                                <h6>
+                                    <i class="fa-solid fa-tag"></i>
+                                    <?php echo $product->getCategory()->name;?>
+                                </h6>
                                 <h5>
                                     €<?php echo number format($product->price, 2, ',', '.');?>
                                 </h5>
+                                <hr>
+                                <h3>
+                                    Articolo: <?php echo get_class($product);?>
+                                </h3>
                             </div>
                         </div>
                     </div>
