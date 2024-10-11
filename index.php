@@ -34,6 +34,36 @@ class Product {
 
 }
 
+class Food extends Product {
+
+    public $ingredient;
+
+    function __construct(string $title, float $price, string $img, Category|null $category, string $material = null) {
+        parent::__construct($title, $price, $img)
+        $this->ingredient = $ingredient;
+    }
+}
+
+class Toy extends Product {
+
+    public $material;
+
+    function __construct(string $title, float $price, string $img, Category|null $category, string $material = null) {
+        parent::__construct($title, $price, $img)
+        $this->material = $material;
+    }
+}
+
+class PetBed extends Product {
+
+    public $size;
+    
+    function __construct(string $title, float $price, string $img, Category|null $category, string $material = null) {
+        parent::__construct($title, $price, $img)
+        $this->size = $size;
+    }
+}
+
 $gatti = new Category('Gatti');
 $cani = new Category('Cani');
 
