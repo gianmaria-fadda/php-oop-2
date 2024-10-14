@@ -1,5 +1,15 @@
 <?php
 
+trait Discountable {
+    public function applyDiscount(float $discount) {
+        if ($discount < 0 || $discount > 100) {
+            throw new Exception("Il valore di sconto deve essere compreso tra 0 e 100.");
+        }
+        $this->price -= $this->price * ($discount / 100);
+    }
+}
+
+
 class Category {
 
     public $name;
@@ -11,13 +21,14 @@ class Category {
 }
 
 class Product {
+    use Discountable;
 
     public $title;
     public $price;
     public $img;
     protected $category;
 
-    function __construct(string $title, float $price, string $img, Category|null $category) {
+    function __construct(string $title, float $price, string $img, ?Category $category) {
         $this->title = $title;
         $this->price = $price;
         $this->img = $img;
@@ -31,7 +42,6 @@ class Product {
     public function setCategory(Category $category) {
         $this->category = $category;
     }
-
 }
 
 class Food extends Product {
@@ -43,9 +53,11 @@ class Food extends Product {
     }
 }
 
+
+
 class Toy extends Product {
     public $material;
-
+    
     function __construct(string $title, float $price, string $img, ?Category $category, string $material = null) {
         parent::__construct($title, $price, $img, $category);
         $this->material = $material;
@@ -63,6 +75,13 @@ class PetBed extends Product {
 
 $gatti = new Category('Gatti');
 $cani = new Category('Cani');
+
+try {
+    $ciboPerCani = new Food('Croccantini per Cani', 10.59, 'https://...', $cani, 'Croccantini');
+    $ciboPerCani->applyDiscount(110);
+} catch (Exception $e) {
+    echo "Errore: " . $e->getMessage();
+}
 
 $gattiProdotto = new Product(
     'Prodotto per Gatti', 
